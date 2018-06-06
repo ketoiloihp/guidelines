@@ -1,4 +1,4 @@
-####Install openswan
+### Install openswan
 
 	yum install strongswan -y
 	
@@ -21,13 +21,15 @@ Ref:
 - [5 Useful Examples of firewall-cmd command](https://www.thegeekdiary.com/5-useful-examples-of-firewall-cmd-command/) 
 - [IPSEC VPN on Centos 7 with StrongSwan](https://raymii.org/s/tutorials/IPSEC_vpn_with_CentOS_7.html)
 
-####Create VPC on AWS
+### 
+### Create VPC on AWS
 
 ###
 Ref:
 - [Extending VPN Connectivity to Amazon AWS VPC using AWS VPC VPN Gateway Service](https://docs.openvpn.net/configuration/extending-vpn-connectivity-to-amazon-aws-vpc-using-aws-vpc-vpn-gateway-service/) 
 
-####Configure on-premises VPN server
+### 
+### Configure on-premises VPN server
 Edit ***/etc/strongswan/ipsec.conf***: ( [Ref.](https://gist.github.com/heri16/2f59d22d1d5980796bfb#file-ipsec-conf-L60) )
 
 	vi /etc/strongswan/ipsec.conf
@@ -91,7 +93,7 @@ Edit ***/etc/strongswan/ipsec.conf***: ( [Ref.](https://gist.github.com/heri16/2
 We secure the connection between both machines with PSK. Therefor we have to set the PSK for machine.
 
 	vi /etc/strongswan/ipsec.secrets
-###
+### 
 	# ipsec.secrets - strongSwan IPsec secrets file
 	{ip_vpn_public} {vpc_vpn_public_ip1} : PSK "..."
 	{ip_vpn_public} {vpc_vpn_public_ip2} : PSK ".."
@@ -115,7 +117,7 @@ view logs ( openswan save the logs on ***/var/log/message*** ):
 
 	tail /var/log/message
 
-###
+### 
 Ref: 
 - [Connect two AWS VPCs with StrongSwan](https://www.peternijssen.nl/connect-multiple-aws-regions-with-strongswan) 
 - [How to Build a Secure Tunnel from Your On-Premises Data Center to Amazon Cloud](https://www.stratoscale.com/blog/cloud/build-secure-tunnel-on-prem-data-center-amazon-cloud/) 
